@@ -9,6 +9,7 @@ export const CardItemList = () => {
   const onClickHandler = (currentId) => {
     let newCardList = [...cardList];
     let idx = newCardList.findIndex((el) => el.id == currentId);
+    if (newCardList[idx].id == isLast.id) return;
     newCardList[idx].isOpen = true;
     console.log(newCardList);
     setCardList([...newCardList]);
